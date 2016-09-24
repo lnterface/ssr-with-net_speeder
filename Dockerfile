@@ -30,5 +30,4 @@ COPY entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/net_speeder
 
-CMD ["/usr/sbin/sshd","-D"]
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
