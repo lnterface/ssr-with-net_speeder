@@ -2,8 +2,15 @@
 FROM ubuntu:14.04.5
 MAINTAINER lnterface [https://github.com/lnterface/ssr-with-net_speeder]
 RUN apt-get update && \
-    apt-get install -y wget python python-pip python-m2crypto libnet1-dev libpcap0.8-dev git gcc && \
+    apt-get install -y wget python python-pip python-m2crypto libnet1-dev libpcap0.8-dev git gcc openssh-server && \
     apt-get clean all
+
+#ssh
+RUN mkdir /var/run/sshd
+RUN echo 'root:toor' |chpasswd
+RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
+EXPOSE 22
 
 #install libsodium support chacha20
 RUN wget --no-check-certificate -O libsodium-1.0.11.tar.gz https://github.com/jedisct1/libsodium/releases/download/1.0.11/libsodium-1.0.11.tar.gz &&\
