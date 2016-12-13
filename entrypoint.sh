@@ -8,7 +8,7 @@ echo "root:$PASS" | chpasswd
 echo "=> Done!"
 
 echo "========================================================================"
-echo "You can now connect to this CentOS container via SSH using:"
+echo "You can now connect to this container via SSH using:"
 echo ""
 echo "    ssh -p <port> root@<host>"
 echo "and enter the root password '$PASS' when prompted"
