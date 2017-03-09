@@ -18,4 +18,4 @@ echo "========================================================================"
 
 nohup /usr/sbin/sshd -D &
 nohup /usr/local/bin/net_speeder eth0 "ip" >/dev/null 2>&1 &
-python /root/ssr/shadowsocks/server.py "$@"
+python /root/ssr/shadowsocks/server.py -s 0.0.0.0 -p 443 -k pass -m rc4-md5 -o http_simple -O auth_sha1 "$@"
