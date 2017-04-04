@@ -1,8 +1,8 @@
 # shadowsocksr-net-speeder 
-FROM ubuntu:14.04.5
+FROM ubuntu:16.10
 MAINTAINER lnterface [https://github.com/lnterface/ssr-with-net_speeder]
 RUN apt-get update && \
-    apt-get install -y pwgen wget python python-pip python-m2crypto libnet1-dev libpcap0.8-dev git gcc openssh-server && \
+    apt-get install -y pwgen wget python python-m2crypto libnet1-dev libpcap0.8-dev git gcc make openssh-server && \
     apt-get clean all
 
 #ssh
