@@ -2,6 +2,7 @@
 
 PASS=${ROOT_PASS:-$(pwgen -s 12 1)}
 _word=$( [ ${ROOT_PASS} ] && echo "preset" || echo "random" )
+ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 echo $(date)
 echo "=> Setting a ${_word} password to the root user"
 echo "root:$PASS" | chpasswd
