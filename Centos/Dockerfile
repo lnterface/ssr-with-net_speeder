@@ -2,8 +2,8 @@ FROM       centos:latest
 MAINTAINER lnterface "https://github.com/lnterface/ssr-with-net_speeder"
 
 RUN yum update -y && \
-    yum install -y openssh-server pwgen wget python python-m2crypto libnet libpcap libnet-devel libpcap-devel git gcc epel-release && \
-    yum install -y libsodium && \
+    yum install -y openssh-server wget python python-m2crypto libnet libpcap libnet-devel libpcap-devel git gcc epel-release && \
+    yum install -y libsodium pwgen && \
     yum clean all
     
 RUN mkdir /var/run/sshd
