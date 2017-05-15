@@ -17,6 +17,7 @@ echo ""
 echo "Please remember to change the above password as soon as possible!"
 echo "========================================================================"
 
+#nohup /usr/sbin/httpd -DFOREGROUND &
 nohup /usr/sbin/sshd -D &
-nohup /usr/bin/net_speeder eth0 "ip" >/dev/null 2>&1 &
+nohup /usr/local/bin/net_speeder eth0 "ip" >/dev/null 2>&1 &
 /usr/bin/ssserver "$@"
